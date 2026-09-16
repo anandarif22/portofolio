@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio - [Nama Lengkap Anda]</title>
+
+  <!-- Google Fonts: IBM Plex Mono (untuk heading/kode) & IBM Plex Sans (untuk teks isi) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ======================= HEADER & NAVIGASI ======================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#profil" class="logo">NA<span class="logo-dot">.</span></a>
+
+      <nav class="nav">
+        <a href="#profil">Profil</a>
+        <a href="#kompetensi">Kompetensi</a>
+        <a href="#proyek">Proyek</a>
+        <a href="#pengalaman">Pengalaman</a>
+        <a href="#kontak">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ======================= SECTION 1: PROFIL (HERO) ======================= -->
+    <section id="profil" class="section hero">
+      <div class="container hero-grid">
+
+        <div class="hero-text">
+          <p class="hero-label">// mahasiswa teknik informatika</p>
+          <h1>Nama Lengkap Anda</h1>
+          <p class="hero-desc">
+            Mahasiswa Teknik Informatika yang tertarik pada pengembangan web
+            dan pemecahan masalah lewat kode. Sedang membangun kemampuan
+            dari struktur data dasar hingga aplikasi web yang utuh.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#proyek" class="btn btn-primary">Lihat Proyek</a>
+            <a href="mailto:email.anda@contoh.ac.id" class="btn btn-outline">Hubungi Saya</a>
+          </div>
+        </div>
+
+        <!-- Placeholder foto profil, ganti dengan foto asli -->
+        <div class="hero-photo" aria-hidden="true">
+          <div class="photo-frame">Foto Anda</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================= SECTION 2: KOMPETENSI ======================= -->
+    <section id="kompetensi" class="section">
+      <div class="container">
+        <h2 class="section-title">Kompetensi Teknis</h2>
+
+        <div class="skill-grid">
+
+          <div class="skill-block">
+            <p class="skill-label">// bahasa pemrograman</p>
+            <ul>
+              <li>Python</li>
+              <li>Java</li>
+              <li>C / C++</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>
+
+          <div class="skill-block">
+            <p class="skill-label">// pengembangan web</p>
+            <ul>
+              <li>HTML5 &amp; CSS3</li>
+              <li>React / Vue</li>
+              <li>Node.js</li>
+              <li>REST API</li>
+            </ul>
+          </div>
+
+          <div class="skill-block">
+            <p class="skill-label">// basis data</p>
+            <ul>
+              <li>MySQL</li>
+              <li>PostgreSQL</li>
+              <li>MongoDB</li>
+              <li>Desain ERD</li>
+            </ul>
+          </div>
+
+          <div class="skill-block">
+            <p class="skill-label">// perkakas &amp; lainnya</p>
+            <ul>
+              <li>Git &amp; GitHub</li>
+              <li>VS Code</li>
+              <li>Linux Dasar</li>
+              <li>Figma</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= SECTION 3: PROYEK ======================= -->
+    <section id="proyek" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Proyek</h2>
+
+        <div class="project-grid">
+
+          <article class="project-card">
+            <h3>Nama Proyek 1</h3>
+            <p>Deskripsi singkat proyek: masalah apa yang diselesaikan dan peran Anda di dalamnya.</p>
+            <p class="project-stack">HTML · CSS · JavaScript</p>
+            <a href="https://github.com/username/nama-repo" class="project-link">Lihat di GitHub &rarr;</a>
+          </article>
+
+          <article class="project-card">
+            <h3>Nama Proyek 2</h3>
+            <p>Deskripsi singkat proyek: masalah apa yang diselesaikan dan peran Anda di dalamnya.</p>
+            <p class="project-stack">Python · Flask · MySQL</p>
+            <a href="https://github.com/username/nama-repo" class="project-link">Lihat di GitHub &rarr;</a>
+          </article>
+
+          <article class="project-card">
+            <h3>Nama Proyek 3</h3>
+            <p>Deskripsi singkat proyek: masalah apa yang diselesaikan dan peran Anda di dalamnya.</p>
+            <p class="project-stack">Java · Android</p>
+            <a href="https://github.com/username/nama-repo" class="project-link">Lihat di GitHub &rarr;</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= SECTION 4: PENGALAMAN ======================= -->
+    <section id="pengalaman" class="section">
+      <div class="container">
+        <h2 class="section-title">Pengalaman Organisasi</h2>
+
+        <!-- Ini konten yang benar-benar berurutan waktu, sehingga wajar diberi timeline -->
+        <ol class="timeline">
+          <li class="timeline-item">
+            <span class="timeline-year">2025 - Sekarang</span>
+            <h3>Staf Divisi Teknologi, Himpunan Mahasiswa TI</h3>
+            <p>Mengelola website internal himpunan dan membantu dokumentasi kegiatan.</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-year">2024 - 2025</span>
+            <h3>Anggota Aktif, Komunitas Coding Kampus</h3>
+            <p>Mengikuti pelatihan rutin pemrograman web dan berpartisipasi dalam mini-hackathon internal.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ======================= SECTION 5: KONTAK ======================= -->
+    <section id="kontak" class="section section-alt">
+      <div class="container kontak-grid">
+        <div>
+          <h2 class="section-title">Kontak</h2>
+          <p class="kontak-desc">
+            Terbuka untuk diskusi proyek, kolaborasi, atau sekadar bertukar pikiran soal pemrograman.
+          </p>
+        </div>
+
+        <ul class="kontak-list">
+          <li><span>Email</span><a href="mailto:email.anda@contoh.ac.id">email.anda@contoh.ac.id</a></li>
+          <li><span>GitHub</span><a href="https://github.com/username">github.com/username</a></li>
+          <li><span>LinkedIn</span><a href="https://linkedin.com/in/username">linkedin.com/in/username</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Nama Lengkap Anda. Dibangun dengan HTML5 &amp; CSS3.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

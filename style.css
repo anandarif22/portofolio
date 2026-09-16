@@ -1,0 +1,387 @@
+/* ============================================================
+   1. RESET & VARIABEL DASAR (CSS Custom Properties)
+   Menyimpan warna, font, dan ukuran di satu tempat agar mudah
+   diubah tanpa mengedit banyak baris kode.
+============================================================ */
+:root {
+  --color-bg:        #FAF9F5;   /* latar utama: putih kertas hangat */
+  --color-surface:   #F1EEE5;   /* latar section selang-seling */
+  --color-ink:       #1C2430;   /* warna teks utama: navy gelap */
+  --color-muted:     #5B6472;   /* teks sekunder/deskripsi */
+  --color-accent:    #2C6E63;   /* teal: warna interaktif utama */
+  --color-accent-2:  #B8862B;   /* ochre: aksen sekunder/label kode */
+  --color-line:      #D8D3C4;   /* warna garis/border tipis */
+
+  --font-mono: 'IBM Plex Mono', monospace;
+  --font-sans: 'IBM Plex Sans', sans-serif;
+
+  --max-width: 1080px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* lebar elemen sudah termasuk padding & border */
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Wadah dengan lebar maksimum agar konten tidak terlalu melebar di layar besar */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================================================
+   2. HEADER & NAVIGASI
+============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.logo-dot {
+  color: var(--color-accent-2);
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+}
+
+.nav a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease; /* transisi halus saat hover */
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  color: var(--color-accent);
+}
+
+/* ============================================================
+   3. LAYOUT UMUM SECTION
+============================================================ */
+.section {
+  padding: 88px 0;
+}
+
+.section-alt {
+  background-color: var(--color-surface);
+}
+
+.section-title {
+  font-family: var(--font-mono);
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+/* ============================================================
+   4. SECTION PROFIL (HERO)
+   Menggunakan CSS Grid dua kolom: teks di kiri, foto di kanan.
+============================================================ */
+.hero {
+  padding-top: 72px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr; /* kolom teks lebih lebar dari foto */
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-label {
+  font-family: var(--font-mono);
+  color: var(--color-accent);
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.hero-text h1 {
+  font-family: var(--font-mono);
+  font-size: clamp(2rem, 4vw, 3rem); /* ukuran font otomatis menyesuaikan lebar layar */
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.hero-desc {
+  max-width: 52ch; /* batasi panjang baris agar mudah dibaca */
+  color: var(--color-muted);
+  margin-bottom: 32px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid var(--color-ink);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-ink);
+  color: var(--color-bg);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-ink);
+  color: var(--color-bg);
+}
+
+.hero-photo {
+  display: flex;
+  justify-content: center;
+}
+
+.photo-frame {
+  width: 260px;
+  height: 260px;
+  border: 1px solid var(--color-line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  background-color: var(--color-surface);
+}
+
+/* ============================================================
+   5. SECTION KOMPETENSI
+   Grid responsif: otomatis menyesuaikan jumlah kolom
+   berdasarkan lebar layar yang tersedia.
+============================================================ */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background-color: var(--color-line); /* menciptakan efek garis pembatas antar blok */
+  border: 1px solid var(--color-line);
+}
+
+.skill-block {
+  background-color: var(--color-bg);
+  padding: 24px;
+}
+
+.skill-label {
+  font-family: var(--font-mono);
+  color: var(--color-accent-2);
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+}
+
+.skill-block li {
+  padding: 4px 0;
+  font-size: 0.95rem;
+}
+
+/* ============================================================
+   6. SECTION PROYEK
+============================================================ */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.project-card {
+  border: 1px solid var(--color-line);
+  padding: 24px;
+  background-color: var(--color-bg);
+  transition: border-color 0.2s ease;
+}
+
+.project-card:hover {
+  border-color: var(--color-accent);
+}
+
+.project-card h3 {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  margin-bottom: 14px;
+}
+
+.project-stack {
+  font-family: var(--font-mono);
+  color: var(--color-accent-2) !important;
+  font-size: 0.8rem !important;
+}
+
+.project-link {
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+/* ============================================================
+   7. SECTION PENGALAMAN (TIMELINE)
+   Garis vertikal di kiri menandakan urutan waktu.
+============================================================ */
+.timeline {
+  border-left: 2px solid var(--color-line);
+  padding-left: 28px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 36px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -33px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+}
+
+.timeline-year {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-accent);
+}
+
+.timeline-item h3 {
+  margin: 6px 0;
+  font-size: 1.05rem;
+}
+
+.timeline-item p {
+  color: var(--color-muted);
+  font-size: 0.92rem;
+}
+
+/* ============================================================
+   8. SECTION KONTAK
+============================================================ */
+.kontak-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.kontak-desc {
+  color: var(--color-muted);
+  max-width: 40ch;
+}
+
+.kontak-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.kontak-list span {
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.kontak-list a:hover {
+  color: var(--color-accent);
+}
+
+/* ============================================================
+   9. FOOTER
+============================================================ */
+.site-footer {
+  padding: 28px 0;
+  text-align: center;
+  border-top: 1px solid var(--color-line);
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+/* ============================================================
+   10. RESPONSIVITAS (MOBILE-FIRST ADJUSTMENTS)
+   Mengubah layout grid multi-kolom menjadi satu kolom
+   pada layar kecil (misalnya ponsel).
+============================================================ */
+@media (max-width: 768px) {
+
+  .nav {
+    display: none; /* navigasi disembunyikan di layar sempit (bisa dikembangkan jadi menu hamburger) */
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr; /* foto turun ke bawah teks */
+    text-align: left;
+  }
+
+  .hero-photo {
+    order: -1; /* foto ditampilkan lebih dulu di mobile */
+    margin-bottom: 24px;
+  }
+
+  .kontak-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 56px 0;
+  }
+}
