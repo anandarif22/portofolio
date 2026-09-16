@@ -8,7 +8,7 @@ proyek, dan pengalaman organisasi.
 - CSS3 (Grid, Flexbox, Media Query)
 
 ## Demo
-https://github.com/anandarif22/portofolio/
+https://anandarif22.github.io/portofolio/
 
 ## Cara Menjalankan Lokal
 1. Clone repository ini
