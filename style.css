@@ -1,16 +1,11 @@
-/* ============================================================
-   1. RESET & VARIABEL DASAR (CSS Custom Properties)
-   Menyimpan warna, font, dan ukuran di satu tempat agar mudah
-   diubah tanpa mengedit banyak baris kode.
-============================================================ */
 :root {
-  --color-bg:        #FAF9F5;   /* latar utama: putih kertas hangat */
-  --color-surface:   #F1EEE5;   /* latar section selang-seling */
-  --color-ink:       #1C2430;   /* warna teks utama: navy gelap */
-  --color-muted:     #5B6472;   /* teks sekunder/deskripsi */
-  --color-accent:    #2C6E63;   /* teal: warna interaktif utama */
-  --color-accent-2:  #B8862B;   /* ochre: aksen sekunder/label kode */
-  --color-line:      #D8D3C4;   /* warna garis/border tipis */
+  --color-bg:        #FAF9F5;   
+  --color-surface:   #F1EEE5;  
+  --color-ink:       #1C2430;   
+  --color-muted:     #5B6472;   
+  --color-accent:    #2C6E63;   
+  --color-accent-2:  #B8862B;  
+  --color-line:      #D8D3C4; 
 
   --font-mono: 'IBM Plex Mono', monospace;
   --font-sans: 'IBM Plex Sans', sans-serif;
@@ -21,7 +16,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* lebar elemen sudah termasuk padding & border */
+  box-sizing: border-box;
 }
 
 body {
@@ -45,16 +40,12 @@ img {
   display: block;
 }
 
-/* Wadah dengan lebar maksimum agar konten tidak terlalu melebar di layar besar */
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 24px;
 }
 
-/* ============================================================
-   2. HEADER & NAVIGASI
-============================================================ */
 .site-header {
   position: sticky;
   top: 0;
@@ -88,7 +79,7 @@ img {
 .nav a {
   font-size: 0.95rem;
   font-weight: 500;
-  transition: color 0.2s ease; /* transisi halus saat hover */
+  transition: color 0.2s ease;
 }
 
 .nav a:hover,
@@ -96,9 +87,6 @@ img {
   color: var(--color-accent);
 }
 
-/* ============================================================
-   3. LAYOUT UMUM SECTION
-============================================================ */
 .section {
   padding: 88px 0;
 }
@@ -114,17 +102,13 @@ img {
   margin-bottom: 40px;
 }
 
-/* ============================================================
-   4. SECTION PROFIL (HERO)
-   Menggunakan CSS Grid dua kolom: teks di kiri, foto di kanan.
-============================================================ */
 .hero {
   padding-top: 72px;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.3fr 1fr; /* kolom teks lebih lebar dari foto */
+  grid-template-columns: 1.3fr 1fr; 
   gap: 48px;
   align-items: center;
 }
@@ -138,14 +122,14 @@ img {
 
 .hero-text h1 {
   font-family: var(--font-mono);
-  font-size: clamp(2rem, 4vw, 3rem); /* ukuran font otomatis menyesuaikan lebar layar */
+  font-size: clamp(2rem, 4vw, 3rem); 
   font-weight: 700;
   line-height: 1.15;
   margin-bottom: 20px;
 }
 
 .hero-desc {
-  max-width: 52ch; /* batasi panjang baris agar mudah dibaca */
+  max-width: 52ch;
   color: var(--color-muted);
   margin-bottom: 32px;
 }
@@ -196,16 +180,11 @@ img {
   background-color: var(--color-surface);
 }
 
-/* ============================================================
-   5. SECTION KOMPETENSI
-   Grid responsif: otomatis menyesuaikan jumlah kolom
-   berdasarkan lebar layar yang tersedia.
-============================================================ */
 .skill-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1px;
-  background-color: var(--color-line); /* menciptakan efek garis pembatas antar blok */
+  background-color: var(--color-line);
   border: 1px solid var(--color-line);
 }
 
@@ -226,9 +205,6 @@ img {
   font-size: 0.95rem;
 }
 
-/* ============================================================
-   6. SECTION PROYEK
-============================================================ */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -269,10 +245,6 @@ img {
   color: var(--color-accent);
 }
 
-/* ============================================================
-   7. SECTION PENGALAMAN (TIMELINE)
-   Garis vertikal di kiri menandakan urutan waktu.
-============================================================ */
 .timeline {
   border-left: 2px solid var(--color-line);
   padding-left: 28px;
@@ -314,9 +286,6 @@ img {
   font-size: 0.92rem;
 }
 
-/* ============================================================
-   8. SECTION KONTAK
-============================================================ */
 .kontak-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -345,9 +314,6 @@ img {
   color: var(--color-accent);
 }
 
-/* ============================================================
-   9. FOOTER
-============================================================ */
 .site-footer {
   padding: 28px 0;
   text-align: center;
@@ -356,24 +322,19 @@ img {
   font-size: 0.85rem;
 }
 
-/* ============================================================
-   10. RESPONSIVITAS (MOBILE-FIRST ADJUSTMENTS)
-   Mengubah layout grid multi-kolom menjadi satu kolom
-   pada layar kecil (misalnya ponsel).
-============================================================ */
 @media (max-width: 768px) {
 
   .nav {
-    display: none; /* navigasi disembunyikan di layar sempit (bisa dikembangkan jadi menu hamburger) */
+    display: none;
   }
 
   .hero-grid {
-    grid-template-columns: 1fr; /* foto turun ke bawah teks */
+    grid-template-columns: 1fr; 
     text-align: left;
   }
 
   .hero-photo {
-    order: -1; /* foto ditampilkan lebih dulu di mobile */
+    order: -1; 
     margin-bottom: 24px;
   }
 
